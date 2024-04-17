@@ -21,7 +21,7 @@ The History-Aware Retriever component is responsible for retrieving relevant inf
 1. **Input Query:** The system receives a user query (e.g., "What is the capital of France?").
 2. **Contextualization:** The query is contextualized using information from the chat history to understand it within the ongoing conversation.
 3. **Language Learning Model (LLM):** The contextualized query is passed to an LLM, which identifies relevant keywords or concepts.
-4. **Retrieval:** Using the information from the LLM, the system retrieves relevant documents or data, such as articles or web pages.
+4. **Retrieval:** Using the information from the LLM, the system retrieves relevant documents or data, such as  PDF articles or web pages.
 
 ### Question Answer Join:
 
@@ -50,7 +50,7 @@ In summary, these frameworks play crucial roles in modern NLP systems. RAG combi
 
 If you'd like further details or have more questions, feel free to ask! 😊
 
-## Installation
+##  Instructions for setting up the environment and running the chatbot.
 
 1. Clone the repository:
 
