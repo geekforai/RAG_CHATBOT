@@ -35,53 +35,48 @@ In summary, this architecture combines natural language understanding, document 
 clarification or have additional questions! 😊
 
 ## Explanation of how RAG, vectordb, Embedding, and LLM frameworks are utilized
-Certainly! Let's explore how the RAG (Retrieval-Augmented Generation), vectordb, Embedding, and LLM (Language Learning Model) frameworks are utilized in natural language processing and information retrieval:
+# Overview of the Chatbot Architecture
 
-1. **RAG (Retrieval-Augmented Generation)**:
-   - **Purpose**: RAG combines retrieval-based methods with generative models to enhance the quality of generated responses.
-   - **Components**:
-     - **Retriever**: The retriever component retrieves relevant documents or passages from a large corpus (e.g., articles, web pages, etc.). It uses techniques like BM25, TF-IDF, or neural retrievers.
-     - **Generator**: The generator is typically a language model (such as GPT-3 or GPT-4 or Gemini-pro). It takes the retrieved documents as input and generates coherent and contextually relevant responses.
-     - **Scorer**: The scorer ranks the retrieved documents based on their relevance to the query. It helps select the most suitable documents for the generator.
-   - **Workflow**:
-     - The retriever identifies relevant passages.
-     - The generator produces an answer based on the retrieved information.
-     - The scorer ensures that the generated answer aligns with the context and relevance.
+This document provides an overview of the architecture of the chatbot system, highlighting the key components and their functionalities.
 
-2. **vectordb**:
-   - **Purpose**: vectordb is a database system designed for efficient storage and retrieval of high-dimensional vectors (embeddings).
-   - **Usage**:
-     - It's commonly used for similarity search, recommendation systems, and content-based retrieval.
-     - Applications include finding similar images, text embeddings, and user-item recommendations.
-     - vectordb stores vectors in a way that allows fast nearest-neighbor searches.
-     - It's often used in conjunction with deep learning models that produce embeddings (e.g., word embeddings, image embeddings).
-     - Example: Given an image, vectordb can quickly find similar images based on their embeddings.
+## Architecture
 
-3. **Embedding**:
-   - **Purpose**: Embeddings represent data (such as words, sentences, or images) in a lower-dimensional space while preserving semantic relationships.
-   - **Types**:
-     - **Word Embeddings**: Represent words as dense vectors. Examples include Word2Vec, GloVe, and FastText.
-     - **Sentence/Document Embeddings**: Represent entire sentences or documents as vectors.
-     - **Image Embeddings**: Encode images into compact representations.
-   - **Applications**:
-     - **Semantic Similarity**: Measure similarity between words, sentences, or documents.
-     - **Recommendation Systems**: Use embeddings to recommend similar items.
-     - **Information Retrieval**: Retrieve relevant documents based on embeddings.
-     - **Transfer Learning**: Pre-trained embeddings enhance downstream tasks (e.g., sentiment analysis, machine translation).
+### History-Aware Retriever:
 
-4. **LLM (Language Learning Model)**:
-   - **Purpose**: LLMs are neural network models trained on large amounts of text data to understand and generate natural language.
-   - **Variants**: Examples include Gemini and GPT.
-   - **Capabilities**:
-     - **Contextual Understanding**: LLMs learn contextual representations by considering surrounding words.
-     - **Transfer Learning**: Pre-trained LLMs can be fine-tuned for specific tasks (e.g., question answering, sentiment analysis).
-     - **Generation**: LLMs generate coherent text, making them useful for chatbots, summarization, and content creation.
-   - **Workflow**:
-     - Pre-training: LLMs learn from a large corpus (unsupervised).
-     - Fine-tuning: LLMs are fine-tuned on specific tasks using labeled data (supervised).
-     - Inference: LLMs generate responses based on input prompts.
+The History-Aware Retriever component is responsible for retrieving relevant information based on the user's query while considering the context from previous interactions (chat history). Here's how it works:
 
-In summary, these frameworks play crucial roles in modern NLP systems. RAG combines retrieval and generation, vectordb efficiently handles embeddings, embeddings capture semantic relationships, and LLMs understand and generate natural language. Their synergy enables powerful applications across various domains. If you'd like further details or have more questions, feel free to ask! 😊
+1. **Input Query:** The system receives a user query (e.g., "What is the capital of France?").
+2. **Contextualization:** The query is contextualized using information from the chat history to understand it within the ongoing conversation.
+3. **Language Learning Model (LLM):** The contextualized query is passed to an LLM, which identifies relevant keywords or concepts.
+4. **Retrieval:** Using the information from the LLM, the system retrieves relevant documents or data, such as articles or web pages.
+
+### Question Answer Join:
+
+Once the relevant documents are retrieved, the system aims to generate a concise and accurate answer to the user's question. Here's how this part works:
+
+1. **Documents:** The retrieved documents serve as the basis for answering questions.
+2. **Answer Prompt:** The system uses another prompt similar to the user query to generate an answer, extracting relevant information from the documents.
+3. **LLM for Answering:** An LLM processes the answer prompt and generates a coherent response considering the context from the chat history and the retrieved documents.
+4. **Answer Generation:** The LLM produces an answer based on the learned information, which is then presented to the user.
+
+### Context Matters:
+
+The key innovation lies in considering context. By analyzing the chat history, the system can provide more accurate and contextually relevant answers. For example, if the user previously asked about French cuisine, the system would understand that the query "What is the capital of France?" likely refers to Paris. In summary, this architecture combines natural language understanding, document retrieval, and context-awareness to enhance the quality of responses in a question-answering system.
+
+## Explanation of RAG, vectordb, Embedding, and LLM Frameworks
+
+### RAG (Retrieval-Augmented Generation):
+
+### vectordb:
+
+### Embedding:
+
+### LLM (Language Learning Model):
+
+In summary, these frameworks play crucial roles in modern NLP systems. RAG combines retrieval and generation, vectordb efficiently handles embeddings, embeddings capture semantic relationships, and LLMs understand and generate natural language. Their synergy enables powerful applications across various domains.
+
+If you'd like further details or have more questions, feel free to ask! 😊
+
 ## Installation
 
 1. Clone the repository:
