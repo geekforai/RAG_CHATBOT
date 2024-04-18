@@ -38,11 +38,6 @@ The key innovation lies in considering context. By analyzing the chat history, t
 
 ## Explanation of RAG, vectordb, Embedding, and LLM Frameworks
 
-### RAG (Retrieval-Augmented Generation):
-
-### vectordb:
-
-### Embedding:
 
 ### LLM (Language Learning Model):
 
