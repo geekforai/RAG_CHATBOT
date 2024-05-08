@@ -70,7 +70,7 @@ If you'd like further details or have more questions, feel free to ask! 😊
 1. Run the application:
 
     ```bash
-    streamlit runn app.py
+    streamlit run app.py
     ```
 
 2. Follow the prompts to upload PDF documents and interact with the chatbot.
